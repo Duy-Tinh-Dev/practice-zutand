@@ -1,0 +1,110 @@
+@use "../../style/" as *;
+
+.slide-one {
+  margin-top: 64px;
+  position: relative;
+
+  &::before {
+    content: "";
+    background: url("../../assets/bg_1.jpg") #020403 no-repeat 50%;
+    background-size: auto 700px;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 80px;
+    width: 390px;
+
+    &__heading {
+      color: white;
+      font-size: 58px;
+      font-weight: 500;
+
+      &--primary {
+        color: #00d2c4;
+      }
+    }
+
+    .btn-download {
+      display: flex;
+      align-items: center;
+      background-color: #00d2c4;
+      border-radius: 4px;
+      width: 100%;
+      justify-content: center;
+      height: 46px;
+      color: white;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 12px;
+
+      &__icon {
+        display: block;
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    .list {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border-radius: 6px;
+        border: 0.01333333rem solid rgba(0, 177, 171, 0.6);
+        background: rgba(0, 210, 196, 0.12);
+        color: #00d2c4;
+        font-size: 12px;
+        width: 120px;
+        padding: 6px 10px;
+
+        &__icon {
+          display: block;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    @include large-mobile {
+      font-size: 40px;
+      margin-bottom: 8px;
+      width: 330px;
+
+      &__heading {
+        font-size: 40px;
+        margin-bottom: 8px;
+      }
+
+      .list {
+        gap: 6px;
+        .item {
+          padding: 8px;
+          &__icon {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @include small-mobile {
+      width: 100%;
+
+      &__heading {
+        font-size: 32px;
+      }
+    }
+  }
+}

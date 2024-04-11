@@ -1,0 +1,85 @@
+@use "../../style/" as *;
+
+.slide-common {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+  &.white {
+    color: white;
+    background-color: #1a1a1a;
+  }
+
+  &.black {
+    color: black;
+    background-color: #eff0f1;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 268px;
+
+    &__number {
+      width: 86px;
+    }
+
+    &__heading {
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 10px;
+
+      &--primary {
+        background: linear-gradient(
+          89.2deg,
+          #417df0 0.3%,
+          #1899ec 31.12%,
+          #20c3e7 66.05%,
+          #34f3d0 98.93%
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &__description {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    @include medium-tablet {
+      margin-left: 20px;
+    }
+  }
+
+  @include large-mobile {
+    align-items: start;
+    background-position: 68% 64px;
+    justify-content: center;
+
+    .content {
+      margin-top: 100px;
+      height: auto;
+      text-align: center;
+
+      &__number {
+        display: none;
+      }
+
+      &__heading {
+        font-size: 34px;
+      }
+    }
+  }
+
+  @include mobile {
+    .content {
+      margin: 100px 0 0 0;
+      font-size: 16px;
+    }
+  }
+}

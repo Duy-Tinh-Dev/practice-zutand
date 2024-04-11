@@ -1,0 +1,59 @@
+@use "./style/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  transition: all 5s;
+  scroll-behavior: smooth;
+
+  @include medium-tablet {
+    scroll-snap-type: y none;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  height: 100vh;
+  padding: 0 180px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  @include medium-tablet {
+    padding: 0 16px;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
